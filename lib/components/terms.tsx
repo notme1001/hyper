@@ -123,6 +123,9 @@ export default class Terms extends React.Component<TermsProps> {
 
           return (
             <div key={`d${uid}`} className={`terms_termGroup ${isActive ? 'terms_termGroupActive' : ''}`}>
+              {/* 
+                // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+                @ts-ignore: Unreachable code error */}
               <TermGroup key={uid} ref_={this.onRef} {...props} />
             </div>
           );

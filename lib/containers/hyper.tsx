@@ -100,13 +100,13 @@ class Hyper extends React.PureComponent<HyperProps> {
   }
 
   render() {
-    const {isMac: isMac_, customCSS, uiFontFamily, borderColor, maximized, fullScreen} = this.props;
+    const {isMac: isMac_, customCSS, uiFontFamily, maximized, fullScreen} = this.props;
     const borderWidth = isMac_ ? '' : `${maximized ? '0' : '1'}px`;
     stylis.set({prefix: false});
     return (
       <div id="hyper">
         <div
-          style={{fontFamily: uiFontFamily, borderColor, borderWidth}}
+          style={{fontFamily: uiFontFamily, borderWidth: '3px', borderColor: '#FFE285'}}
           className={`hyper_main ${isMac_ && 'hyper_mainRounded'} ${fullScreen ? 'fullScreen' : ''}`}
         >
           <HeaderContainer />
@@ -127,6 +127,7 @@ class Hyper extends React.PureComponent<HyperProps> {
               right: 0;
               bottom: 0;
               border: 1px solid #333;
+              border-radius: 5px;
             }
 
             .hyper_mainRounded {

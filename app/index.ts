@@ -37,6 +37,7 @@ const windowSet = new Set<BrowserWindow>([]);
 app.config = config;
 app.plugins = plugins;
 app.getWindows = () => new Set([...windowSet]); // return a clone
+app.disableHardwareAcceleration();
 
 // function to retrieve the last focused window in windowSet;
 // added to app object in order to expose it to plugins.

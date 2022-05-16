@@ -128,6 +128,8 @@ class TermGroup_ extends React.PureComponent<TermGroupProps> {
         Object.assign({}, this.props, {termGroup: child})
       );
 
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore: Unreachable code error
       return <DecoratedTermGroup key={child.uid} {...props} />;
     });
 
@@ -145,6 +147,8 @@ const mapDispatchToProps = (dispatch: HyperDispatch, ownProps: TermGroupOwnProps
   }
 });
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore: Unreachable code error
 const TermGroup = connect(mapStateToProps, mapDispatchToProps, null, {forwardRef: true})(TermGroup_);
 
 const DecoratedTermGroup = decorate(TermGroup, 'TermGroup');

@@ -13,7 +13,8 @@ import {
   SESSION_CLEAR_ACTIVE,
   SESSION_USER_DATA,
   SESSION_SET_XTERM_TITLE,
-  SESSION_SEARCH
+  SESSION_SEARCH,
+  SESSION_URL_SET
 } from '../constants/sessions';
 import {HyperState, session, HyperDispatch, HyperActions} from '../hyper';
 
@@ -159,6 +160,16 @@ export function closeSearch(uid?: string, keyEvent?: any) {
         keyEvent.catched = false;
       }
     }
+  };
+}
+
+export function setUrl(uid: string, url: string) {
+  return (dispatch: HyperDispatch) => {
+    dispatch({
+      type: SESSION_URL_SET,
+      uid: uid,
+      url: url
+    });
   };
 }
 
